@@ -1,0 +1,54 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Estilos para el contenido principal */
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  h2 {
+    
+    font-size: 1.5rem;
+    margin-top: 5px;
+  }
+  
+  /* Estilos para las imágenes */
+  img {
+    width: 60%;
+    max-width: 200px;
+    height: auto;
+    margin: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Estilos para los enlaces */
+  a {
+    text-decoration: none;
+  }
+  
+  /* Estilos específicos para dispositivos móviles */
+  @media (max-width: 768px) {
+    img {
+      max-width: 80%;
+    }
+  }
+  
