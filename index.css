@@ -1,0 +1,307 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body{
+    font-family: Arial;
+}
+
+
+.nav{
+    background-color: rgb(208, 24, 24);
+
+    --img1: scale(1);
+    --img2: scale(0);
+}
+
+.nav:has( .dropdown:target ){
+    --img1: scale(0);
+    --img2: scale(1);
+
+    --clip:inset(0 0 0 0);
+
+}
+
+.nav__container{
+    width: 90%;
+    margin: 0 auto;
+    height: 70px;
+
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-template-areas: "title img";
+    justify-content: space-between;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.nav__title{
+    color: #fff;
+    grid-area: title;
+}
+
+
+.nav__menu{
+    grid-area: img;
+    position: relative;
+    z-index: 10;
+
+    transform: var(--img1);
+}
+
+.nav__menu--second{
+    transform: var(--img2);
+}
+
+.nav__icon{
+    width: 30px;
+    display: block;
+}
+
+.dropdown{
+    position: absolute;
+    background-color: #35838e;
+    width: 75%;
+    max-width: 300px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 1em;
+    z-index: 2;
+    display: grid;
+    align-content:center ;
+    gap: 1rem;
+
+    overflow-y: auto;
+
+
+    clip-path: var(--clip, inset(0 0 100% 100%));
+    transition: clip-path .5s;
+}
+
+
+@media screen and (max-width: 700px) {
+    
+    .dropdown{
+        max-width: 40rem;
+        width: 100%;
+        background-color: #1a5f68;
+      }
+}
+
+.dropdown__list{
+    list-style: none;
+}
+
+.dropdown__link{
+    color: rgb(184, 187, 191);
+    padding: 1em .7em;
+    text-decoration: none;
+    
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+
+    position: relative;
+    background-color: var(--bg, transparent);
+    border-radius: 6px;
+}
+
+.dropdown__list:has( :checked ){
+    --rows: 1fr;
+    --rotate: rotate(180deg);
+    --bg: #28303B;
+}
+
+.dropdown__check{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.dropdown__arrow{
+    margin-left: auto;
+    transform: var(--rotate, 0);
+    transition: .2s transform;
+}
+
+.dropdown__content{
+    display: grid;
+    grid-template-rows: var(--rows, 0fr);
+    transition: .3s grid-template-rows;
+}
+
+.dropdown__sub{
+    overflow: hidden;
+
+}
+
+.dropdown__li{
+    width: 85%;
+    list-style: none;
+    margin-left: auto;
+}
+
+.dropdown__anchor{
+    padding: 1em 0;
+    display: block;
+    color: #B6BABE;
+    text-decoration: none;
+}
+
+
+
+/*Pagina principal*/
+/*Logo*/
+.pagina_principal{
+position: absolute;
+width: 231px;
+height: 172px;
+left: calc(50% - 231px/2 - 0.5px);
+top: 125px;
+
+
+border-radius: 40px 40px 40px 0px;
+}
+
+/*Boton Menu Restaurante*/
+
+.menu_restaurante {
+    position: relative;
+    left: 25rem;
+    top: 24rem;
+    background-color: tomato;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    animation: pulsate 1.5s infinite;
+  }
+  
+  @keyframes pulsate {
+    0% {
+      box-shadow: 0 0 0 0 rgba(224, 75, 12, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 20px rgba(76, 175, 80, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+  }
+
+  .menu_restaurante a {
+    text-decoration: none; 
+    color: inherit; 
+  }
+
+/*Parrafo */
+.pagina_principal_parrafo{
+    position: absolute;
+width: 517px;
+height: 179px;
+left: 250px;
+top: 280px;
+
+font-family: 'Inter';
+font-style: italic;
+font-weight: 800;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #110808;
+}
+
+/*imagenes platos*/
+
+.plato1{
+    position: absolute;
+width: 157px;
+height: 127px;
+left: 150px;
+top: 500px;
+
+
+border-radius: 10px;
+}
+.plato2{
+    position: absolute;
+width: 157px;
+height: 127px;
+left: 350px;
+top: 500px;
+
+
+border-radius: 10px;
+}
+.plato3{
+    position: absolute;
+width: 152px;
+height: 127px;
+left: 550px;
+top: 500px;
+
+
+border-radius: 10px;
+}
+.plato4{
+    position: absolute;
+width: 162px;
+height: 127px;
+left: 750px;
+top: 500px;
+
+
+border-radius: 10px;
+}
+
+@media screen and (max-width: 767px) {
+    .pagina_principal_parrafo{
+        position: absolute;
+        width: 231px;
+        height: 172px;
+        left: calc(50% - 231px/2 - 0.5px);
+        top: 400px;
+    }
+    
+  .plato1{
+    position: absolute;
+        width: 231px;
+        height: 172px;
+        left: calc(50% - 231px/2 - 0.5px);
+        top: 650px;
+  }
+  .plato2{
+    position: absolute;
+        width: 231px;
+        height: 172px;
+        left: calc(50% - 231px/2 - 0.5px);
+        top: 850px;
+  }
+  .plato3{
+    position: absolute;
+        width: 231px;
+        height: 172px;
+        left: calc(50% - 231px/2 - 0.5px);
+        top: 1050px;
+  }
+  .plato4{
+    position: absolute;
+        width: 231px;
+        height: 172px;
+        left: calc(50% - 231px/2 - 0.5px);
+        top: 1250px;
+  }
+}
+
+
