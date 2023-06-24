@@ -205,7 +205,7 @@ color: #110808;
 /*imagenes platos*/
 
 .plato1{
-    position: absolute;
+position: absolute;
 width: 157px;
 height: 127px;
 left: 150px;
@@ -215,7 +215,7 @@ top: 500px;
 border-radius: 10px;
 }
 .plato2{
-    position: absolute;
+position: absolute;
 width: 157px;
 height: 127px;
 left: 350px;
@@ -225,7 +225,7 @@ top: 500px;
 border-radius: 10px;
 }
 .plato3{
-    position: absolute;
+position: absolute;
 width: 152px;
 height: 127px;
 left: 550px;
@@ -235,7 +235,7 @@ top: 500px;
 border-radius: 10px;
 }
 .plato4{
-    position: absolute;
+position: absolute;
 width: 162px;
 height: 127px;
 left: 750px;
